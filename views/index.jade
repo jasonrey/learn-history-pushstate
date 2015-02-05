@@ -1,0 +1,12 @@
+extends html
+
+block content
+    .container
+        .col-sm-8.col-sm-offset-2
+            .tabnav.text-center
+                a.btn.btn-default(href="/", title="Main", data-page="main", class=page == "main" ? "active" : "") Main
+                a.btn.btn-default(href="/tab2", title="Tab 2", data-page="tab2", class=page == "tab2" ? "active" : "") Tab 2
+                a.btn.btn-default(href="/tab3", title="Tab 3", data-page="tab3", class=page == "tab3" ? "active" : "") Tab 3
+            .tabcontent.panel.panel-default
+                .panel-body
+                    != views(page)
